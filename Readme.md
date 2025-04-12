@@ -2,8 +2,6 @@
 
 This Python script continuously monitors the availability of configured HTTP endpoints and logs the cumulative availability by domain.
 
----
-
 ## Features
 
 - Reads endpoint list from a YAML config file  
@@ -21,6 +19,8 @@ This Python script continuously monitors the availability of configured HTTP end
 
 ### Running the script 
 python main.py config.yaml
+
+---
 
 ## What was improved
 
@@ -59,4 +59,3 @@ Use Ctrl+C to gracefully stop monitoring.
 
 - Fulfills all provided requirements
 - Modular and production-friendly code
-- Easily extendable to support alerting, retry logic, etc.
