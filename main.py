@@ -40,7 +40,7 @@ def check_endpoint(endpoint):
         response = requests.request(method, url, headers=headers, json=yaml.safe_load(body) if body else None, timeout=RESPONSE_TIMEOUT)
         elapsed_ms = (time.time() - start_time) * 1000
 
-        is_up = 200 <= response.status_code < 300 and elapsed_ms <= 500
+        is_up = 200 <= response.status_code < 300 and elapsed_ms <= 500 # added time_out condition
         status = "UP" if is_up else "DOWN"
 
         logger.info(f"Checked {url} [{status}] - Status: {response.status_code}, Time: {elapsed_ms:.2f}ms")
@@ -76,7 +76,7 @@ def monitor_endpoints(config_path):
         logger.info("\n--- Availability Report ---")
         for domain, stats in domain_stats.items():
             availability = (stats["up"] / stats["total"]) * 100
-            logger.info(f"{domain} - Availability: {availability:.2f}%")
+            logger.info(f"{domain} - Availability: {availability:.2f}%") # return availability of each domain
 
         next_run += CHECK_INTERVAL
         sleep_time = max(0, next_run - time.time())
