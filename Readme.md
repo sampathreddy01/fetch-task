@@ -36,6 +36,8 @@ python main.py config.yaml
 | Check loop was naive | Used time.sleep with compensation for processing time |
 
 
+---
+
 ## Logging
 
 Logs are saved to:
@@ -45,6 +47,8 @@ Logs are saved to:
 Each cycle logs:
 - Individual endpoint check result (status code and latency)
 - Availability percentage per domain (cumulative)
+
+--- 
 
 
 ## To Stop Monitoring
